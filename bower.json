@@ -4,7 +4,7 @@
   "homepage": "https://github.com/franzheidl/bemify",
   "author": "Franz Heidl",
   "description": "Sass Mixins to write BEM-style SCSS source",
-  "licanse": "MIT",
+  "license": "MIT",
   "keywords": ["sass", "scss", "bem"],
   "main": "sass/_bemify.scss",
   "ignore": [

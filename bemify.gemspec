@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   # Gem Details
   s.name = "bemify"
   s.description = %q{Bemify is a set of mixins to help you write well-structured, component-based modular SCSS source using a BEM-style syntax.}
-  s.summary = %q{Write idiomatic BEM-style SCSS source with Sass (SCSS)}
+  s.summary = %q{Sass Mixins to write BEM-style SCSS source}
   s.authors = ["Franz Heidl"]
   s.homepage = "https://github.com/franzheidl/bemify"
 
