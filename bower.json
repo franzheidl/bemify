@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "homepage": "https://github.com/franzheidl/bemify",
   "author": "Franz Heidl",
-  "description": "Write idiomatic BEM-style SCSS source with Sass (SCSS).",
+  "description": "Sass Mixins to write BEM-style SCSS source",
   "licanse": "MIT",
   "keywords": ["sass", "scss", "bem"],
   "main": "sass/_bemify.scss",

@@ -1,7 +1,7 @@
 {
   "name": "bemify",
   "version": "0.0.1",
-  "description": "Write idiomatic BEM-style SCSS source with Sass (SCSS).",
+  "description": "Sass Mixins to write BEM-style SCSS source",
   "repository": {
     "type": "git",
     "url": "https://github.com/franzheidl/bemify.git"
