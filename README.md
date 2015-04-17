@@ -1,8 +1,10 @@
 # bemify
 
-Bemify is a set of mixins to help you write well-structured, readable, maintainable, component-based modular SCSS source using a BEM-style syntax:
+[![Bower Version](https://img.shields.io/bower/v/bemify.svg)](https://img.shields.io/bower/v/bemify.svg)
+[![Gem Version](https://img.shields.io/gem/v/bemify.svg)](https://img.shields.io/gem/v/bemify.svg)
 
-Seperators can be configured, you can write single class state modifiers(`.block__element--modifier--has-state`) or scoped state modifiers(`.block__element--modifier.has-state` as per default).
+Bemify is a set of mixins to help you write well-structured, readable, maintainable, component-based modular SCSS source using a BEM-style syntax.
+
 
 ## Install
 
@@ -29,24 +31,25 @@ First, import bemify:
     @import 'bemify';
 
 
-Then, use bemify to write all your selectors by writing idiomatic BEM-ish SCSS. In your SCSS source, all children/subcomponents, and modifiers will be declared in the scope of their root/parent element, making your source cleaner and easier to read and change, e.g. when having to re-name classes:
+Once imported, the bemify mixins can now be used to write BEM-style SCSS, making your source cleaner and easier to read and change.
 
     @include block('my-element') {
+        …
 
         @include element('child') {
-
+          …
         }
 
         @include modifier('small') {
-
+          …
         }
 
         @include modifier('large') {
-
+          …
         }
 
         @include state('active') {
-
+          …
         }
 
     }
@@ -55,20 +58,24 @@ The output will be full, non-nested BEM-style class selectors:
 
 
     .my-element {
-
+      …
     }
 
     .my-element__child {
-
+      …
     }
 
     .my-element--large {
-
+      …
     }
 
     .my-element.is-active {
-
+      …
     }
+
+By default, bemify will output combined `.block.state` / `.block__element.state` selectors.
+Bemify can also be configured to output full `.block--state` / `.block__element--state` selectors.
+For details, see Configuration below.
 
 
 The mixins can be nested to create modifiers for subcomponents:
@@ -117,18 +124,11 @@ This will result in:
 
     .my-element.is-active {
 
-        //  This will output a combined block-/block__element state selector by default,
-        //  but can be configured to output plain, non combined state modifiers like:
-        //
-        //      .my-element--is-active {
-        //
-        //      }
-        //
     }
 
 ### Scoping
 
-Bemify can also be used inside a scope:
+Bemify can can of course also be used inside any scope:
 
 	.scope {
 
@@ -155,17 +155,19 @@ To overwrite bemify's config with your own configuration file, import your confi
 
 Configurable options and their defaults are:
 
-    $combined-state-selectors: true  // Will output selectors like: .element.is-active, set to false to write .element--is-active
+* `$combined-state-selectors`: `true`
 
-    $element-separator: "__"
+  Will output selectors like: .element.is-active, set to false to write .element--is-active
 
-    $modifier-separator: "--"
+* `$element-separator`: `__`
 
-    $state-prefix: "is"
+* `$modifier-separator`: `--`
 
-Note that `$state-prefix`can be overridden with each call to the `state` mixin, so you can use both `--is-active` and `--has-error` using the same configuration:
+* `$state-prefix`: `is`
 
-    @include state('error', 'has') {}
+  Note that `$state-prefix` can be overridden with each call to the `state` mixin, so you can use both `--is-active` and `--has-error` using the same configuration:
+
+      @include state('error', 'has') {}
 
 
 ## Aliases
@@ -184,6 +186,7 @@ Not everyone thinks in the categories of 'block, element, modifier', but many of
 
 
 ## Resources
+
 * [Harry Roberts: MindBEMding – getting your head ’round BEM syntax](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)
 * [Nicolas Gallagher: About HTML semantics and front-end architecture](http://nicolasgallagher.com/about-html-semantics-front-end-architecture/)
 
