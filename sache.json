@@ -1,0 +1,5 @@
+{
+  "name": "bemify",
+  "description": "Sass Mixins to write BEM-style SCSS source",
+  "tags": ["sass", "scss", "bem"]
+}
