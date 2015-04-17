@@ -1,0 +1,72 @@
+@import "sass/bemify";
+
+
+@include block('test') {
+
+  color: red;
+  
+  @include element('child') {
+    width: 50%;
+    @include modifier('bad') {
+      color: #000;
+      @include state('happy') {
+        border: 1px solid pink;
+      }
+    }
+  }
+  
+  @include modifier('full') {
+    width: 100%;
+  }
+  
+  @include state('active') {
+    color: green;
+  }
+  
+}
+
+@include block('nav') {
+  color: #fff;
+  
+  @include element('item') {
+    float: left;
+    
+    @include modifier('right') {
+      float: right;
+    }
+    
+    @include state('active') {
+      color: red;
+    }
+    
+  }
+  
+}
+
+// test scoping, aliases
+
+.scope {
+  
+  @include component('button') {
+    display: inline-block;
+    
+    @include subcomponent('spinner') {
+      color: #fff;
+    }
+    
+    @include sub('icon') {
+      width: 16px;
+      height: 16px;
+    }
+    
+    @include modifier('danger') {
+      background: red;
+    }
+    
+    @include state('disabled') {
+      pointer: not-allowed;
+    }
+    
+  }
+  
+}

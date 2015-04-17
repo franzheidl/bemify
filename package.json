@@ -1,0 +1,20 @@
+{
+  "name": "bemify",
+  "version": "0.0.1",
+  "description": "Write idiomatic BEM-style SCSS source with Sass (SCSS).",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/franzheidl/bemify.git"
+  },
+  "homepage": "https://github/franzheidl/bemify",
+  "keywords": ["sass", "scss", "bem"],
+  "license": "MIT",
+  "author": "Franz Heidl",
+  "main": "sass/_bemify.scss",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "matchdep": "~0.3.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-sass": "~0.8.1"
+  }
+}

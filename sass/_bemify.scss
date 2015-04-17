@@ -1,0 +1,104 @@
+// bemify
+// https://gtihub.com/franzheidl/bemify
+// Franz Heidl 2015
+// MIT License
+
+
+
+// CONFIG
+// ======
+
+// You can change the configuration here. To use your own config/variables file, import your config after importing bemify and before calling bemify's mixins.
+
+// Output combined state selectors like:
+//    .block__element.is-active {}
+// Set to false to output single, non-combined state modifiers:
+//    .block__element--is-active {}
+$combined-state-selectors:    true;
+
+// .block[separator]element:
+$element-separator:              "__";
+
+// .block[separator]modifier:
+$modifier-separator:             "--";
+
+// The default prefix for state modifier selectors, will be combined with $modifier-separator:
+$state-prefix:                "is";
+
+
+
+
+// MIXINS
+// ======
+
+@mixin block($name) {
+  .#{$name} {
+    @content;
+  }
+}
+
+
+@mixin element($name) {
+  @at-root {
+    &#{$element-separator}#{$name} {
+      @content;
+    }
+  }
+}
+
+
+@mixin modifier($name) {
+  @at-root {
+    &#{$modifier-separator}#{$name} {
+      @content;
+    }
+  }
+}
+
+
+@mixin state($state, $prefix: $state-prefix) {
+  @if $combined-state-selectors == true {
+    @at-root {
+      &.#{$prefix}-#{$state} {
+        @content;
+      }
+    }
+  }
+  @else {
+    @at-root {
+      &#{$modifier-separator}#{$prefix}-#{$state} {
+        @content;
+      }
+    }
+  }
+}
+
+
+
+
+// ALIASES
+// =======
+
+@mixin component($name) {
+  @include block($name) {
+    @content;
+  }
+}
+
+@mixin child($name) {
+  @include element($name) {
+    @content;
+  }
+}
+
+@mixin subcomponent($name) {
+  @include element($name) {
+    @content;
+  }
+}
+
+@mixin sub($name) {
+  @include element($name) {
+    @content;
+  }
+}
