@@ -188,8 +188,10 @@ Not everyone thinks in the categories of 'block, element, modifier', but many of
 
 ## Resources
 
-* [Harry Roberts: MindBEMding – getting your head ’round BEM syntax](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)
 * [Nicolas Gallagher: About HTML semantics and front-end architecture](http://nicolasgallagher.com/about-html-semantics-front-end-architecture/)
+* [Philip Walton: Side Effects in CSS](http://philipwalton.com/articles/side-effects-in-css/)
+* [Harry Roberts: MindBEMding – getting your head ’round BEM syntax](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)
+
 
 
 ---
