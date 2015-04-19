@@ -2,15 +2,23 @@
   "name": "bemify",
   "version": "0.0.1",
   "description": "Sass Mixins to write BEM-style SCSS source",
+  "main": "sass/_bemify.scss",
+  "author": "Franz Heidl",
   "repository": {
     "type": "git",
     "url": "https://github.com/franzheidl/bemify.git"
   },
   "homepage": "https://github/franzheidl/bemify",
-  "keywords": ["sass", "scss", "bem"],
+  "keywords": [
+    "sass",
+    "scss",
+    "bem"
+  ],
   "license": "MIT",
   "author": "Franz Heidl",
-  "main": "sass/_bemify.scss",
+  "bugs": {
+    "url": "https://github.com/franzheidl/bemify/issues"
+  },
   "devDependencies": {
     "grunt": "~0.4.5",
     "matchdep": "~0.3.0",

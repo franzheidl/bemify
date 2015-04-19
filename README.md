@@ -2,23 +2,29 @@
 
 [![Bower Version](https://img.shields.io/bower/v/bemify.svg)](https://img.shields.io/bower/v/bemify.svg)
 [![Gem Version](https://img.shields.io/gem/v/bemify.svg)](https://img.shields.io/gem/v/bemify.svg)
+[![npm Version](https://img.shields.io/npm/v/bemify.svg)](https://img.shields.io/npm/v/bemify.svg)
 
 Bemify is a set of mixins to help you write well-structured, readable, maintainable, component-based modular SCSS source using a BEM-style syntax.
 
 
 ## Install
 
-Bemify can be installed as a Ruby Gem, via [Bower](http://bower.io), or manually.
+Bemify can be installed as a Ruby Gem, via [Bower](http://bower.io), [npm](https://www.npmjs.com), or manually.
 
 ### Bower
 To install via bower run:
 
-    $ bower install --save-dev bemify
+    $ bower install bemify --save-dev
 
 ### Ruby Gem
 When installed as a Ruby Gem, Bemify will be installed as a Compass extension if Compass is installed on your system.
 
     $ gem install bemify
+
+### npm
+To install via npm run:
+
+    $npm install bemify --save-dev
 
 ### Manual Install
 Include `sass/_bemify.scss`in the appropriate location in your project.
