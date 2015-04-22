@@ -6,7 +6,7 @@
 
 Bemify is a set of mixins to help you write well-structured, readable, maintainable, component-based modular SCSS source using a BEM-style syntax.
 
-:exclamation: :exclamation: :exclamation:** Bemify does NOT YET support [libsass](https://github.com/sass/libsass), but will do with the [next version of libsass](https://github.com/sass/libsass/issues/353)!!! ** :+1:
+** :exclamation::exclamation::exclamation: Bemify does NOT YET support [libsass](https://github.com/sass/libsass), but will do with the [next version of libsass](https://github.com/sass/libsass/issues/353)!!! :+1: **
 
 
 ## Install
