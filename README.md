@@ -93,19 +93,21 @@ The mixins can be nested to create modifiers for subcomponents:
     @include block('my-element') {
 
         @include element('child') {
+            …
             @include modifier('bad') {
+                …
                 @include state('happy') {
-
+                    …
                 }
             }
         }
 
         @include modifier('large') {
-
+            …
         }
 
         @include state('active') {
-
+            …
         }
 
     }
@@ -113,23 +115,23 @@ The mixins can be nested to create modifiers for subcomponents:
 This will result in:
 
     .my-element {
-
+        …
     }
 
     .my-element__child {
-
+        …
     }
 
     .my-element__child--bad {
-
+        …
     }
 
     .my-element__child--bad.is-happy {
-
+        …
     }
 
     .my-element--large {
-
+        …
     }
 
     .my-element.is-active {
@@ -160,7 +162,7 @@ To overwrite bemify's config with your own configuration file, import your confi
     @import "my_config";
 
     @include block('my-block') {
-        //…
+        …
     }
 
 
@@ -182,7 +184,7 @@ Configurable options and their defaults are:
 
 
 ## Aliases
-Not everyone thinks in the categories of 'block, element, modifier', but many of us still want to write modularized, components-based CSS. There are a couple of aliases included for those who think in terms of components, parent-child / -subcomponents included:
+Not everyone thinks in the categories of 'block, element, modifier', but many of us still want to write modularized, components-based CSS. There are a couple of aliases included for those who think in terms of components, parent-child / -subcomponents included (And it's totally straightforward to add your own):
 
     @include block('name') {}
         == @include component('name') {}
@@ -197,9 +199,12 @@ Not everyone thinks in the categories of 'block, element, modifier', but many of
 
 
 ## Resources
+Some highly recommended reading re CSS structure, decoupling markup and styles, BEM, and why this makes sense:
+
 
 * [Nicolas Gallagher: About HTML semantics and front-end architecture](http://nicolasgallagher.com/about-html-semantics-front-end-architecture/)
 * [Philip Walton: Side Effects in CSS](http://philipwalton.com/articles/side-effects-in-css/)
+* [BEM official](http://getbem.com/)
 * [Harry Roberts: MindBEMding – getting your head ’round BEM syntax](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)
 
 
