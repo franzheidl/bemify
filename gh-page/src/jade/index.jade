@@ -1,0 +1,341 @@
+doctype html
+
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width', initial-scale='1.0')
+    title bemify
+    link(rel='stylesheet', href='main.css', type='text/css')
+
+  body
+    header(role='masthead')
+      .container
+        ul.source-list
+          li
+            a(href='https://github.com/franzheidl/bemify') github.com
+          li
+            a(href='https://rubygems.org/gems/bemify') rubygems.org
+          li
+            a(href='https://www.npmjs.com/package/bemify') npmjs.com
+          li
+            a(href='http://bower.io/search/?q=bemify') bower.io
+          li
+            a(href='http://www.sache.in/search?query=bemify') sache.in
+            
+        h1 _bemify
+        
+        h2 A set of mixins to write well-structured, maintainable, idiomatic <a href="http://getbem.com/">BEM</a>-style <code>.scss</code> source:
+
+    
+    main
+      section
+        .container
+          pre.examples
+            code.code--scss
+              | @include block('name') {
+              |   …
+              |  
+              |   @include element('child') {
+              |     …
+              |   }
+              |  
+              |   @include modifier('light') {
+              |     …
+              |   }
+              |  
+              |   @include state('active') {
+              |     …
+              |   }
+              |  
+              | }
+              | 
+              
+            code.code--css
+              | .name {
+              |   …
+              | }
+              |   
+              | .name__child {
+              |   …
+              | }
+              |  
+              | .name--light {
+              |   …
+              | }
+              |  
+              | .name.is-active {
+              |   …
+              | }
+              |   
+            
+                
+      section
+        .container
+          h1 Install
+          
+          p Bemify can be installed as a Ruby Gem, NPM-module, via bower, or manually. Bemify is also on Sache.
+          
+          h2 Ruby Gem
+          
+          pre
+            code
+              | $ gem install bemify
+          
+          h2 NPM
+          
+          pre
+            code
+              | $ npm install bemify --save-dev
+          
+          h2 Bower
+          
+          pre
+            code
+              | $ bower install bemify
+          
+          h2 Manual Install
+          
+          p Clone the repository or download <code>sass/_bemify.scss</code>. Put <code>_bemify.scss</code> in the directory of your sass/scss code where you deem fit.
+      
+      
+      section
+        .container
+          h1 Using bemify
+          
+          p First, import bemify (note that the path might be need to be adjusted depending on your installation method):
+          
+          pre
+            code
+              | @import "bemify";
+              
+          p Then you can use bemify to write bem-style scss source for your components. The output will be full, non-nested bem-style class selectors.
+          
+          pre.examples
+            code.code--scss
+              | @include block('my-block') {
+              |   …
+              |  
+              |   @include element('child') {
+              |     …
+              |   }
+              |  
+              |   @include modifier('small') {
+              |     …
+              |   }
+              |  
+              |   @include state('state') {
+              |     …
+              |   }
+              |  
+              | }
+              |  
+              
+            code.code--css
+              | .my-element {
+              |   …
+              | }
+              |  
+              | .my-element__child {
+              |   …
+              | }
+              |  
+              | .my-element--small {
+              |   …
+              | }
+              |  
+              | .my-element.is-active {
+              |   …
+              | }
+              |  
+              
+          p By default, bemify will output combined <code>.block.state</code> / <code>.block__element.state</code> selectors. Bemify can also be configured to output full <code>.block--state</code> / <code>.block__element--state</code> selectors. For details, see Configuration below.
+              
+          
+          h2 Nesting
+           
+          p The mixins can be nested to create modifiers for subcomponents:
+          
+          pre.examples
+            code.code--scss
+              | @include block('my-element') {
+              |  
+              |   @include element('child') {
+              |     …
+              |  
+              |     @include modifier('bad') {
+              |       …
+              |     }
+              |   
+              |     @include state('happy') {
+              |       …
+              |     }
+              |  
+              |   }
+              |  
+              |   @include modifier('large') {
+              |     …
+              |   }
+              |  
+              |   @include state('active') {
+              |     …
+              |   }
+              |  
+              | }
+              |  
+              
+            code.code--css
+              | .my-element {
+              |   …
+              | }
+              |  
+              | .my-element__child {
+              |   …
+              | }
+              |  
+              | .my-element__child--bad {
+              |   …
+              | }
+              |  
+              | .my-element__child--bad.is-happy {
+              |   …
+              | }
+              |  
+              | .my-element--large {
+              |   …
+              | }
+              |  
+              | .my-element.is-active {
+              |   …
+              | }
+              |  
+              
+          h2 Scoping
+          
+          p Bemifys mixins can be used inside a scope. Whether scoping is to be considered <i>true</i> BEM remains open for dicsussion though.
+          
+          pre.examples
+            code.code--scss
+              | .scope {
+              |   
+              |   @include block('my-block') {
+              |     …
+              |     
+              |     @include element('item') {
+              |       …
+              |     }
+              |   
+              |   }  
+              |  
+              | }
+              |  
+            
+            code.code--css
+              | .scope .my-block {
+              |   …
+              | }
+              |  
+              | .scope .my-block__item {
+              |   …
+              | }
+              | 
+          
+          
+          h2 Configuration
+          
+          p Bemify uses configuration variables to adjust the block-element and  block-/block-element-state separator, as well as the state prefix. To overwrite bemify's config with your own configuration file, import your configuration AFTER importing bemify, BUT BEFORE calling the mixins.
+          
+          pre
+            code
+              | @import "bemify";
+              | @import "my_config";
+              |   
+              | @include block('my-block') {
+              |   …
+              | }
+              |  
+          
+          
+          p If you are not using a configuration file, you can directly override the appropriate variables after importing bemify. The configuration variables and their defaults are:
+          
+          ul
+            li
+              <code>$combined-state-selectors</code>: <code>true</code>
+              p <code>true</code> will ouput <code>.block.is-active</code>, <code>false</code> will output <code>.block--is-active</code>.
+              
+            li
+              <code>$element-separator</code>: <code>__</code>
+              
+            li
+              <code>$modifier-separator</code>: <code>--</code>
+              
+            li
+              <code>$state-prefix</code>: <code>is</code>
+              
+          p Note that <code>$state-prefix</code> can be overridden with each call to the state mixin as a second argument, so you can use both <code>--is-active</code> and <code>--has-error</code> using the same configuration:
+              
+          pre
+            code
+              | @include state('error', 'has') {}
+              |  
+      
+          
+          h2 Aliases
+          
+          p Not everyone thinks in the categories of 'block, element, modifier', but many of us still want to write modularized, component-based CSS. There are a couple of aliases included for those who think in terms of components, parent-child / -subcomponents included. 
+          
+          pre
+            code
+              | @include block('name') {}
+              | == @include component('name') {}
+              |  
+              | @include element('name') {}
+              | == @include child('name') {}
+              | == @include subcomponent('name') {}
+              | == @include sub('name') {}
+              |  
+              
+          p It is also straightforward to add your own aliases:
+          
+          pre
+            code
+              | @mixin my-block-alias(name) {
+              |   @include block(name) {
+              |     @at-content;
+              |   }
+              | }
+              | 
+              
+      section
+        .container
+          h1 Resources
+          
+          p Some highly recommended reading re CSS structure, decoupling markup and styles, BEM, and why this makes sense:
+          
+          ul
+            li
+              a(href='http://getbem.com/') Bem official
+            li
+              a(href='http://nicolasgallagher.com/about-html-semantics-front-end-architecture/') Nicolas Gallagher: About HTML semantics and front-end architecture
+            li
+              a(href='http://philipwalton.com/articles/side-effects-in-css/') Philip Walton: Side Effects in CSS
+            li
+              a(href='http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/') Harry Roberts: MindBEMding – getting your head ’round BEM syntax
+      
+      section
+        .container
+          ul.source-list.source-list--bordered
+             li
+               a(href='https://github.com/franzheidl/bemify') github.com
+             li
+               a(href='https://rubygems.org/gems/bemify') rubygems.org
+             li
+               a(href='https://www.npmjs.com/package/bemify') npmjs.com
+             li
+               a(href='http://bower.io/search/?q=bemify') bower.io
+             li
+               a(href='http://www.sache.in/search?query=bemify') sache.in   
+          
+    footer
+      .container         
+        p &copy; <a href="http://www.franzheidl.de">Franz Heidl</a>, 2015.
+      

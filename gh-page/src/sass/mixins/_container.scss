@@ -1,0 +1,10 @@
+@mixin container($max-width: $max-width) {
+  max-width: $max-width;
+  margin: 0 auto;
+  
+  @media screen and (max-width: $max-width + $outer-margin * 2) {
+    padding-left: $outer-margin;
+    padding-right: $outer-margin;
+  }
+  
+}
