@@ -4,7 +4,7 @@
 [![Gem Version](https://img.shields.io/gem/v/bemify.svg)](https://img.shields.io/gem/v/bemify.svg)
 [![npm Version](https://img.shields.io/npm/v/bemify.svg)](https://img.shields.io/npm/v/bemify.svg)
 
-Bemify is a set of mixins to help you write well-structured, readable, maintainable, component-based modular SCSS source using a BEM-style syntax.
+Bemify is a set of Sass mixins to help you write well-structured, readable, maintainable, component-based modular SCSS source using a BEM-style syntax.
 
 ~~Bemify supports [libsass](https://github.com/sass/libsass) (3.2.0 or higher).~~
 
