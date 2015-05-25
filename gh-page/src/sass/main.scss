@@ -133,6 +133,10 @@ pre {
       display: block;
       opacity: .4;
     }
+    
+    @media screen and (max-width: $max-width + $outer-margin * 2) {
+      padding: 20px 0;
+    }
   }
   
   .code--scss {
