@@ -8,11 +8,7 @@ Bemify is a set of Sass mixins to help you write well-structured, readable, main
 
 Bemify site & documentation: [http://franzheidl.github.io/bemify/](http://franzheidl.github.io/bemify/)
 
-
-~~Bemify supports [libsass](https://github.com/sass/libsass) (3.2.0 or higher).~~
-
-Bemify does not yet work with libsass.
-
+Bemify supports [libsass](https://github.com/sass/libsass) since libsass 3.2.4.
 
 ## Install
 
