@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Sass Mixins to write BEM-style SCSS source",
   "main": "sass/_bemify.scss",
+  "eyeglass": {
+    "exports": "eyeglass-exports.js"
+  },
   "author": "Franz Heidl",
   "repository": {
     "type": "git",
@@ -12,10 +15,10 @@
   "keywords": [
     "sass",
     "scss",
-    "bem"
+    "bem",
+    "eyeglass-module"
   ],
   "license": "MIT",
-  "author": "Franz Heidl",
   "bugs": {
     "url": "https://github.com/franzheidl/bemify/issues"
   },
