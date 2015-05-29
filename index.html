@@ -29,7 +29,7 @@
 .name.is-active {
   …
 }
-  </code></pre></div></section><section><div class="container"><h1>Install</h1><p>Bemify can be installed as a Ruby Gem, NPM-module, via bower, or manually. Bemify is also on Sache.</p><h2>Ruby Gem</h2><pre><code>$ gem install bemify</code></pre><h2>NPM</h2><pre><code>$ npm install bemify --save-dev</code></pre><h2>Bower</h2><pre><code>$ bower install bemify</code></pre><h2>Manual Install</h2><p>Clone the repository or download <code>sass/_bemify.scss</code>. Put <code>_bemify.scss</code> in the directory of your sass/scss code where you deem fit.</p></div></section><section><div class="container"><h1>Using bemify</h1><p>First, import bemify (note that the path might be need to be adjusted depending on your installation method):</p><pre><code>@import "bemify";</code></pre><p>Then you can use bemify to write bem-style scss source for your components. The output will be full, non-nested bem-style class selectors.</p><pre class="examples"><code class="code--scss">@include block('my-block') {
+  </code></pre></div></section><section><div class="container"><h1>Install</h1><p>Bemify can be installed as a Ruby Gem, NPM-module, via bower, or manually. Bemify is also on Sache.</p><h2>Ruby Gem</h2><pre><code>$ gem install bemify</code></pre><h2>NPM</h2><pre><code>$ npm install bemify --save-dev</code></pre><h2>Bower</h2><pre><code>$ bower install bemify</code></pre><h2>Manual Install</h2><p>Clone the repository or download <code>sass/_bemify.scss</code>. Put <code>_bemify.scss</code> in the directory of your sass/scss code where you deem fit.</p></div></section><section><div class="container"><h1>Using bemify</h1><p>First, import bemify (note that the path might need to be adjusted depending on your installation method):</p><pre><code>@import "bemify";</code></pre><p>Then you can use bemify to write bem-style scss source for your components. The output will be full, non-nested bem-style class selectors.</p><pre class="examples"><code class="code--scss">@include block('my-block') {
   …
  
   @include element('child') {
@@ -126,13 +126,15 @@
 .scope .my-block__item {
   …
 }
- </code></pre><h2>Configuration</h2><p>Bemify uses configuration variables to adjust the block-element and  block-/block-element-state separator, as well as the state prefix. To overwrite bemify's config with your own configuration file, import your configuration AFTER importing bemify, BUT BEFORE calling the mixins.</p><pre><code>@import "bemify";
+ </code></pre><h2>Configuration</h2><p>Bemify uses configuration variables to adjust the block-element and  block-/block-element-state separator, as well as the state prefix. To overwrite bemify's config with your own configuration file, import your configuration <strong>after</strong> importing bemify, but <strong>before</strong> calling the mixins.</p><pre><code>@import "bemify";
 @import "my_config";
   
 @include block('my-block') {
   …
 }
- </code></pre><p>If you are not using a configuration file, you can directly override the appropriate variables after importing bemify. The configuration variables and their defaults are:</p><ul><li><code>$combined-state-selectors</code>: <code>true</code><p><code>true</code> will ouput <code>.block.is-active</code>, <code>false</code> will output <code>.block--is-active</code>.</p></li><li><code>$element-separator</code>: <code>__</code></li><li><code>$modifier-separator</code>: <code>--</code></li><li><code>$state-prefix</code>: <code>is</code></li></ul><p>Note that <code>$state-prefix</code> can be overridden with each call to the state mixin as a second argument, so you can use both <code>--is-active</code> and <code>--has-error</code> using the same configuration:</p><pre><code>@include state('error', 'has') {}
+ </code></pre><p>If you are not using a configuration file, you can directly override the appropriate variables after importing bemify. The configuration variables and their defaults are:</p><ul><li><code>$combined-state-selectors</code>: <code>true</code><p><code>true</code> will ouput <code>.block.is-active</code>, <code>false</code> will output <code>.block--is-active</code>.</p></li><li><code>$element-separator</code>: <code>__</code></li><li><code>$modifier-separator</code>: <code>--</code></li><li><code>$state-prefix</code>: <code>is</code></li></ul><p>Note that <code>$state-prefix</code> can be overridden with each call to the state mixin as a second argument, so you can use both <code>--is-active</code> and <code>--has-error</code> using the same configuration:</p><pre><code>@include state('error', 'has') {
+  …  
+}
  </code></pre><h2>Aliases</h2><p>Not everyone thinks in the categories of 'block, element, modifier', but many of us still want to write modularized, component-based CSS. There are a couple of aliases included for those who think in terms of components, parent-child / -subcomponents included. </p><pre><code>@include block('name') {}
 == @include component('name') {}
  
