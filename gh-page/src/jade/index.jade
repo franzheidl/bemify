@@ -103,7 +103,7 @@ html(lang='en')
         .container
           h1 Using bemify
           
-          p First, import bemify (note that the path might be need to be adjusted depending on your installation method):
+          p First, import bemify (note that the path might need to be adjusted depending on your installation method):
           
           pre
             code
@@ -243,7 +243,7 @@ html(lang='en')
           
           h2 Configuration
           
-          p Bemify uses configuration variables to adjust the block-element and  block-/block-element-state separator, as well as the state prefix. To overwrite bemify's config with your own configuration file, import your configuration AFTER importing bemify, BUT BEFORE calling the mixins.
+          p Bemify uses configuration variables to adjust the block-element and  block-/block-element-state separator, as well as the state prefix. To overwrite bemify's config with your own configuration file, import your configuration <strong>after</strong> importing bemify, but <strong>before</strong> calling the mixins.
           
           pre
             code
@@ -276,8 +276,11 @@ html(lang='en')
               
           pre
             code
-              | @include state('error', 'has') {}
-              |  
+              | @include state('error', 'has') {
+              |   …  
+              | }
+              | 
+              
       
           
           h2 Aliases
