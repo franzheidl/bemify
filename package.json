@@ -1,6 +1,6 @@
 {
   "name": "bemify",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Sass Mixins to write BEM-style SCSS source",
   "main": "sass/_bemify.scss",
   "eyeglass": {
