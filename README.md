@@ -6,13 +6,13 @@
 
 Bemify is a set of Sass mixins to help you write well-structured, readable, maintainable, component-based modular SCSS source using a BEM-style syntax.
 
-Bemify site & documentation: [http://franzheidl.github.io/bemify/](http://franzheidl.github.io/bemify/)
+__Bemify site & documentation: [http://franzheidl.github.io/bemify/](http://franzheidl.github.io/bemify/)__
 
 Bemify supports [libsass](https://github.com/sass/libsass) since libsass 3.2.4.
-
 ## Install
 
-Bemify can be installed as a Ruby Gem, via [Bower](http://bower.io), [npm](https://www.npmjs.com), or manually.
+Bemify can be installed as a [Ruby Gem](https://rubygems.org/gems/bemify), via [Bower](http://bower.io/search/?q=bemify), [NPM](https://www.npmjs.com/package/bemify), or manually. As a NPM module, bemify supports [eyeglass](https://github.com/sass-eyeglass/eyeglass). Bemify is also on [Sache.in](http://www.sache.in/search?query=bemify).
+
 
 ### Bower
 To install via bower run:
