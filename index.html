@@ -142,8 +142,8 @@
 == @include child('name') {}
 == @include subcomponent('name') {}
 == @include sub('name') {}
- </code></pre><p>It is also straightforward to add your own aliases:</p><pre><code>@mixin my-block-alias(name) {
-  @include block(name) {
+ </code></pre><p>It is also straightforward to add your own aliases:</p><pre><code>@mixin my-block-alias($name) {
+  @include block($name) {
     @at-content;
   }
 }
