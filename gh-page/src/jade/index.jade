@@ -302,8 +302,8 @@ html(lang='en')
           
           pre
             code
-              | @mixin my-block-alias(name) {
-              |   @include block(name) {
+              | @mixin my-block-alias($name) {
+              |   @include block($name) {
               |     @at-content;
               |   }
               | }
