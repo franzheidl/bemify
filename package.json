@@ -4,7 +4,9 @@
   "description": "Sass Mixins to write BEM-style SCSS source",
   "main": "sass/_bemify.scss",
   "eyeglass": {
-    "exports": "eyeglass-exports.js"
+    "exports": "eyeglass-exports.js",
+    "name": "bemify",
+    "needs": "^0.8.2"    
   },
   "author": "Franz Heidl",
   "repository": {
