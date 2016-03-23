@@ -14,16 +14,16 @@
 //    .block__element.is-active {}
 // Set to false to output single, non-combined state modifiers:
 //    .block__element--is-active {}
-$combined-state-selectors:    true;
+$combined-state-selectors: true !default;
 
 // .block[separator]element:
-$element-separator:              "__";
+$element-separator:        "__" !default;
 
 // .block[separator]modifier:
-$modifier-separator:             "--";
+$modifier-separator:       "--" !default;
 
 // The default prefix for state modifier selectors, will be combined with $modifier-separator:
-$state-prefix:                "is";
+$state-prefix:             "is" !default;
 
 
 
