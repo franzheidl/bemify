@@ -155,10 +155,10 @@ Bemify can can of course also be used inside any scope:
 ### Configuration Options
 
 bemify uses some configuration variables where to adjust the block-element and the state separator, as well as the state prefix.
-To overwrite bemify's config with your own configuration file, import your configuration AFTER importing bemify, BUT BEFORE calling the mixins.
+To overwrite bemify's config with your own configuration file, just import your variables before using one of the mixins.
 
+    @import "your-variables";
     @import "bemify";
-    @import "my_config";
 
     @include block('my-block') {
         …
