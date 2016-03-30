@@ -1,8 +1,8 @@
 # bemify
 
-[![Bower Version](https://img.shields.io/bower/v/bemify.svg)](https://img.shields.io/bower/v/bemify.svg)
-[![Gem Version](https://img.shields.io/gem/v/bemify.svg)](https://img.shields.io/gem/v/bemify.svg)
-[![npm Version](https://img.shields.io/npm/v/bemify.svg)](https://img.shields.io/npm/v/bemify.svg)
+[![Bower Version](https://img.shields.io/bower/v/bemify.svg)](http://bower.io/search/?q=bemify)
+[![Gem Version](https://img.shields.io/gem/v/bemify.svg)](https://rubygems.org/gems/bemify)
+[![npm Version](https://img.shields.io/npm/v/bemify.svg)](https://www.npmjs.com/package/bemify)
 
 Bemify is a set of Sass mixins to help you write well-structured, readable, maintainable, component-based modular SCSS source using a BEM-style syntax.
 
