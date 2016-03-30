@@ -127,8 +127,8 @@
 .scope .my-block__item {
   …
 }
- </code></pre><h2>Configuration</h2><p>Bemify uses configuration variables to adjust the block-element and  block-/block-element-state separator, as well as the state prefix. To overwrite bemify's config with your own configuration file, import your configuration <strong>after</strong> importing bemify, but <strong>before</strong> calling the mixins.</p><pre><code>@import "bemify";
-@import "my_config";
+ </code></pre><h2>Configuration</h2><p>Bemify uses configuration variables to adjust the block-element and  block-/block-element-state separator, as well as the state prefix. To overwrite bemify's config with your own configuration file, just import your variables before using one of the mixins.</p><pre><code>@import "my_config";
+@import "bemify";
   
 @include block('my-block') {
   …
