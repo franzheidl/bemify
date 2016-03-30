@@ -12,6 +12,6 @@ else
 end
 
 module Bemify
-  VERSION = "0.0.1"
-  DATE = "2015-04-17"
+  VERSION = "0.1.2"
+  DATE = "2016-03-30"
 end
