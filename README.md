@@ -139,7 +139,7 @@ This will result in:
 
 ### Scoping
 
-Bemify can can of course also be used inside any scope:
+Bemify can of course also be used inside any scope:
 
 	.scope {
 
